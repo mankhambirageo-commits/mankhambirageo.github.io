@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GE Engineering - Electrical Solutions & Marketplace</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-bolt"></i>
+                <h1>GE <span>ENGINEERING</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#marketplace">Marketplace</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon" id="cartIcon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h2>Professional Electrical Engineering Solutions</h2>
+            <p>Solar installations, industrial maintenance, domestic repairs, and a marketplace for DIY electronics</p>
+            <a href="#marketplace" class="btn">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>Comprehensive electrical engineering solutions for residential, commercial, and industrial clients</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-solar-panel"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Solar Installations</h3>
+                        <p>Complete solar power solutions for homes and businesses including design, installation, and maintenance.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Industrial Maintenance</h3>
+                        <p>Preventive and corrective maintenance for industrial electrical systems to ensure optimal performance.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Domestic Repairs</h3>
+                        <p>Professional electrical repairs and installations for residential properties of all sizes.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Fault Finding & Repair</h3>
+                        <p>Expert diagnosis and repair of electrical faults in appliances, wiring, and control systems.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marketplace Section -->
+    <section class="section marketplace" id="marketplace">
+        <div class="container">
+            <div class="section-title">
+                <h2>Marketplace</h2>
+                <p>Shop for DIY electronics, components, and consumables</p>
+            </div>
+            
+            <div class="product-filters">
+                <button class="filter-btn active">All Products</button>
+                <button class="filter-btn">DIY Modules</button>
+                <button class="filter-btn">Components</button>
+                <button class="filter-btn">Consumables</button>
+            </div>
+            
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be loaded here dynamically -->
+            </div>
+            
+            <div class="admin-panel" id="adminPanel">
+                <h3>Admin Panel - Add/Edit Products</h3>
+                <form class="admin-form" id="adminForm">
+                    <div class="form-group">
+                        <label for="productName">Product Name</label>
+                        <input type="text" id="productName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productPrice">Price (MWK)</label>
+                        <input type="number" id="productPrice" min="0" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productCategory">Category</label>
+                        <select id="productCategory" required>
+                            <option value="DIY Modules">DIY Modules</option>
+                            <option value="Components">Components</option>
+                            <option value="Consumables">Consumables</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="productDescription">Description</label>
+                        <input type="text" id="productDescription" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="admin-btn add-product-btn" id="addProductBtn">Add Product</button>
+                        <button type="button" class="admin-btn update-product-btn" id="updateProductBtn" style="display:none;">Update Product</button>
+                        <button type="button" class="admin-btn" id="cancelEditBtn" style="display:none;">Cancel</button>
+                    </div>
+                </form>
+            </div>
+            
+            <div style="text-align: center; margin-top: 20px;">
+                <button class="btn" id="toggleAdminBtn">Toggle Admin Panel</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Get in touch for professional electrical engineering services or marketplace inquiries</p>
+            </div>
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Contact Information</h3>
+                    <div class="contact-info">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+265885890781">+265 885 890 781</a>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:mankhambiragoe@gmail.com">mankhambiragoe@gmail.com</a>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Lilongwe, Malawi</p>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Business Hours</h3>
+                    <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+                    <p>Saturday: 9:00 AM - 4:00 PM</p>
+                    <p>Sunday: Closed</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Services Offered</h3>
+                    <p>Solar Installations</p>
+                    <p>Industrial Maintenance</p>
+                    <p>Domestic Electrical Repairs</p>
+                    <p>Fault Finding & Repair</p>
+                    <p>Electronic Components Sales</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>GE Engineering</h3>
+                    <p>Providing professional electrical engineering solutions and quality electronic components since 2025.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <a href="#home">Home</a>
+                    <a href="#services">Services</a>
+                    <a href="#marketplace">Marketplace</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect With Us</h3>
+                    <a href="https://wa.me/265885890781" target="_blank">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                    <a href="mailto:mankhambiragoe@gmail.com">
+                        <i class="fas fa-envelope"></i> Email
+                    </a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 GE Engineering. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" id="closeCartBtn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be added here -->
+        </div>
+        <div class="cart-total">
+            Total: <span id="cartTotal">MWK 0.00</span>
+        </div>
+        <button class="checkout-btn" id="checkoutBtn">
+            Checkout via WhatsApp
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
